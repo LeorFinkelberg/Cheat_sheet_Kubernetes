@@ -21,6 +21,23 @@
 \tableofcontents
 
 
+\section{Основные термины}
+
+\noindent\emph{под} (pod) -- группа \emph{контейнеров} (один или несколько); минимальная сущность, управляемая Kubernetes; у всех контейнеров внутри одного пода общие network, IPC, UTS, PID*, namespace; pod нельзя делить между узлами кластера \pic{fig:pod}; на \pic{fig:podpatterns} приведены основные паттерны использования подов
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.55]{figures/pod.png}
+	\caption{ Иллюстрация концепции подов }\label{fig:pod}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.55]{figures/podpatterns.png}
+	\caption{ Паттерны использования подов }\label{fig:podpatterns}
+\end{figure}
+
+
 \section{Общие замечания}
 
 Для небольших проектов из нескольких контейнеров удобнее использовать оркестратор Nomad \url{https://www.nomadproject.io/}.
@@ -46,7 +63,7 @@ numbers = none
 brew install minikube
 \end{lstlisting}
 
-\texttt{minikube} -- утилита командной строки для настройки и запуска однонодового кластера Kubernetes в виртуальной машине на локальном компьютере. Этот вариант идеально подходит для первого знакомства с кластером под управлением Kubernetes и выполнения простых операций.
+\texttt{minikube} -- утилита командной строки для настройки и запуска \emph{одноузлового кластера Kubernetes} в виртуальной машине на \emph{локальном} компьютере. Этот вариант идеально подходит для первого знакомства с кластером под управлением Kubernetes и выполнения простых операций.
 
 Проверка установки
 \begin{lstlisting}[
